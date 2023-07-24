@@ -65,16 +65,29 @@
       font-size: 3em;
       animation: color-change 1s infinite;
     }
-    
-    .answer {
-      -webkit-animation: name 2s infinite;
+
+    @keyframes animate-color {
+      0% {
+        background-color: red;;
+      }
+      50% {
+        background-color: blue;
+      }
+      100% {
+        background-color: red;
+      }
     }
     
-    @keyframes name {
-      0% {color:red;}
-      50% {color:blue;}
-      100% {color:red;}
+    .animate-color {
+      animation: animate-color 2s infinite;
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      .animate-color {
+        animation: none;
+      }
+    }
+   
   </style>
   
 </head>
@@ -147,9 +160,12 @@
 
     The Objects, while powerful and fearsome, lack the ability to freely gather together of their own volition, and so have called forth a need in certain individuals. These people become Seekers, their stories as twisted and damned as the Objects themselves. These Seekers have oft set out for three main reasons: to Seek for Power, to Seek for Reunion, or to Seek for Separation. Their goals are known to mutate and change them into villains and monsters but we can only hope that one with a just heart prevails over these foes.
 
-    There may very well be a reason that you have come across this site, dear reader. Perhaps the Objects are calling.
-
-    <a class="answer" onclick="loadIFrame('holders/end.html')" style="text-decoration: none;">Will you answer?</a>
+    There may very well be a reason that you have come across this site, dear reader. Perhaps the Objects are calling. 
+    
+    <div class="animate-color">
+    <a onclick="loadIFrame('holders/end.html')">Will you answer?</a>
+    </div><br>
+    
     
 
     
