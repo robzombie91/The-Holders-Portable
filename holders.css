@@ -17,6 +17,11 @@ img {
   .dropdown-menu {
     background-color: #EEF2FF !important;
   }
+
+  ul .dropdown-menu {
+    max-height: 200px;
+    overflow-y: auto;
+  }
   
   .navbar-brand {
     background-color: #000000 !important;
@@ -76,13 +81,7 @@ img {
     }
   }
 
-  .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    margin-top: 0.125rem;
-  }
-  
+ 
   .container-fluid {
     background-color: #000000 !important;
     font-size: 3em;
