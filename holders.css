@@ -27,6 +27,10 @@ img {
     color:rgb(255, 255, 255);
     padding-left: 10px;
   }
+
+  .navbar-toggler {
+    background-color: #c3c8e4;
+  }
   
   @media (min-width : 300px) {
 
