@@ -1,0 +1,106 @@
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    padding: 3px;
+  }
+
+  .navbar-collapse {
+    background-color: #EEF2FF !important;
+  }
+  
+  .navbar-nav {
+    background-color: #EEF2FF !important;
+    flex: 1 0 auto;
+  }
+  
+  .dropdown-menu {
+    background-color: #EEF2FF !important;
+  }
+  
+  .navbar-brand {
+    background-color: #EEF2FF !important;
+    flex: 0 0 auto;
+    margin-right: auto;
+    
+  }
+  
+  @media (min-width : 500px) {
+
+    p   {
+        font-size: 2vw;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    body {
+        background-color: #c3c8e4 !important;
+        padding-left: 1%;
+        padding-top: 70px;
+        padding-right: 1%;
+      }
+    .nav-link {
+      font-size: 2rem;
+    }
+    .dropdown-item {
+      font-size: 1.1rem;
+      text-align: center;
+    }
+  @media (min-width : 1024px) {
+
+    p {
+        font-size: 1vw;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    body {
+        background-color: #c3c8e4 !important;
+        padding-left: 1%;
+        padding-top: 150px;
+        padding-right: 1%;
+        font-size: 50px!important;
+      }
+
+     .nav-link {
+        font-size: 2rem;
+        text-align: center;
+    }
+    .dropdown-item {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 0.125rem;
+  }
+  
+  .container-fluid {
+    background-color: #EEF2FF !important;
+    font-size: 3em;
+    animation: color-change 1s infinite;
+  }
+
+  @keyframes animate-color {
+    0% {
+      background-color: red;;
+    }
+    50% {
+      background-color: blue;
+    }
+    100% {
+      background-color: red;
+    }
+  }
+  
+  .animate-color {
+    animation: animate-color 2s infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-color {
+      animation: none;
+    }
+  }
+}
