@@ -54,23 +54,24 @@ body {
   font-size: 3em;
 }
 
-@media (min-width : 428px) {
+@media (max-width : 432px) {
   p {
-    font-size: 2vw;
+    font-size: 1rem;
     font-family: var(--main-font-family);
   }
   .nav-link {
-    font-size: 2rem;
+    font-size: 1rem;
   }
   .dropdown-item {
     font-size: 1.1rem;
     text-align: center;
   }
   body {
-    padding-top: 18%;
+    padding-top: 20%;
   }
   .large-text {
     font-size: 1rem;
+    padding-top: 1%;
   }  
 }
 
