@@ -100,16 +100,19 @@ body {
 }
 
 @keyframes animate-color {
-  0%, 100% {
-    background-color: red;
+  0% {
+    color: red;
   }
   50% {
-    background-color: blue;
+    color: blue;
+  }
+  100% {
+    color: red;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-color {
-    animation: none;
-  }
+  .animate-color  {
+    animation: 3s;
+}
 }
