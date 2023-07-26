@@ -19,7 +19,7 @@
     .then(data => {
       const parser = new DOMParser();
       const doc = parser.parseFromString(data, "text/html");
-      
+  
       doc.querySelectorAll("p").forEach(p => {
         p.classList.add("large-text");
       });
@@ -29,7 +29,10 @@
       // replace the innerHTML of the main content with the fetched data
       mainContent.innerHTML = doc.body.innerHTML;
   
+      // Scroll to the top of the page after loading the content
+      window.scrollTo({top: 0, behavior: 'smooth'});
     })
     .catch(error => console.error('Error:', error));
   }
+  
   
