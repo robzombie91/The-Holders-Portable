@@ -3,21 +3,15 @@
 
 <head>
   <title>The Holders Series</title>
-  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-  
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <link rel="stylesheet" type="text/css" href="holders.css">
-
-  </head>
+  <script src="main.js" defer></script>
+</head>
 
 <body>
-
-  <!-- this is the navbar -->
-  
-  <div class="navbar navbar-expand-lg bg-body-tertiary fixed-top" style="padding: 0;">
-    <div class="container-fluid" style="padding: 0%;">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" style="padding: 0;">
+    <div class="container-fluid p-0">
       <img src="images/eye-dark-eye.gif" style="height: 70px;">
       
       <a class="navbar-brand" href="index.html">THE HOLDERS SERIES</a>
@@ -34,15 +28,15 @@
             </a>
             
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" onclick="loadIFrame('holders/end.html')">Holder of the End</a></li>
-              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" onclick="loadIFrame('holders/beginning.html')">Holder of the Beginning</a></li>
-              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" onclick="loadIFrame('holders/eternity.html')">The Holder of Eternity</a></li>
-              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" onclick="loadIFrame('holders/nothing.html')">The Holder of Nothing</a></li>
-              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" onclick="loadIFrame('holders/light.html')">The Holder of Light</a></li>
-              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" onclick="loadIFrame('holders/song.html')">The Holder of Song</a></li>
-              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" onclick="loadIFrame('holders/path.html')">The Holder of the Path</a></li>
-              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" onclick="loadIFrame('holders/wealth.html')">The Holder of Wealth</a></li>
-              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" onclick="loadIFrame('holders/wisdom.html')">The Holder of Wisdom</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" onclick="loadContent('holders/end.html')">Holder of the End</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" onclick="loadContent('holders/beginning.html')">Holder of the Beginning</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" onclick="loadContent('holders/eternity.html')">The Holder of Eternity</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" onclick="loadContent('holders/nothing.html')">The Holder of Nothing</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" onclick="loadContent('holders/light.html')">The Holder of Light</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" onclick="loadContent('holders/song.html')">The Holder of Song</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" onclick="loadContent('holders/path.html')">The Holder of the Path</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" onclick="loadContent('holders/wealth.html')">The Holder of Wealth</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" onclick="loadContent('holders/wisdom.html')">The Holder of Wisdom</a></li>
             </ul>
           </li>
           
@@ -52,7 +46,7 @@
             </a>
             
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown" height="40px">
-              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" onclick="loadIFrame('holders/hisholder.html')">His Holder</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" onclick="loadContent('holders/hisholder.html')">His Holder</a></li>
             </ul>
           </li>
           
@@ -60,62 +54,36 @@
         
       </div>
     </div>
-  </div>
-
-  <p>
-    In any city, in any country, there's a mental institution or halfway house you can try any of these in. There were 2538 of these Objects, but 2000 were lost.
-
-    The remaining 538 must never come together. Ever.
-
-    These stories have been gathered from various sources, many of which are questionable at best, but they all follow a similar thread; they tell the tale of a number of Objects, which, when brought together, will bring about horrendous consequences, details of which drive most people mad.
-
-    The veracity of the stories is always in question; this is how it is intended to be. Nobody really knows if these Objects are real, or if there are indeed a set number of Objects that exist in the world that yearn for a reunion with their kin. Speculation runs rampant; part of what makes the Holders stories so enticing is the possibility any person could go into a special institution, ask to visit a Holder, and be forced to undergo a test of power to earn an Object.
-
-    Some of the Holders have posted their own stories, adding to the mystery of an already eerie and unnerving series. This site is merely an archive; the Holders themselves have leaped around the fields of realm and lore since time immemorial, and the Objects are restless for their Reunion.
-
-    The Objects, while powerful and fearsome, lack the ability to freely gather together of their own volition, and so have called forth a need in certain individuals. These people become Seekers, their stories as twisted and damned as the Objects themselves. These Seekers have oft set out for three main reasons: to Seek for Power, to Seek for Reunion, or to Seek for Separation. Their goals are known to mutate and change them into villains and monsters but we can only hope that one with a just heart prevails over these foes.
-
-    There may very well be a reason that you have come across this site, dear reader. Perhaps the Objects are calling. 
-    
-    <a onclick="loadIFrame('holders/end.html')">Will you answer?</a>
-        
-    <br><br><b>Copyright: <a href="https://web.archive.org/web/20200629152446/http://theholders.org/?Special:Main">theholders.org</a> and all authors of the stories involved</b>
-    </p>
-     
-   
-  <iframe id="iframe" width="100%" height="100%">
-  </iframe>
-
+  </nav>
   
-  <script>
-    iframe.onload = function() {
-      iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-    }
-
-    function loadIFrame(url) {
-      document.querySelectorAll('p').forEach(p => p.remove());
-      document.getElementById("iframe").src = url; 
-    }
-
-    if (window.innerWidth < 576) {
-    
-      // Select the elements you want to increase font size on  
-      const elements = document.querySelectorAll('h1, h2, p');
-
-      // Loop through the elements
-      elements.forEach(element => {
-      
-        // Increase font size  
-        element.style.fontSize = '1.2rem';
-      
-      });
-    
-    }
-
-  </script>
+  <main id="main-content">
+    <!-- Main content -->
+    <p>
+      In any city, in any country, there's a mental institution or halfway house you can try any of these in. There were 2538 of these Objects, but 2000 were lost.
   
+      The remaining 538 must never come together. Ever.
+  
+      These stories have been gathered from various sources, many of which are questionable at best, but they all follow a similar thread; they tell the tale of a number of Objects, which, when brought together, will bring about horrendous consequences, details of which drive most people mad.
+  
+      The veracity of the stories is always in question; this is how it is intended to be. Nobody really knows if these Objects are real, or if there are indeed a set number of Objects that exist in the world that yearn for a reunion with their kin. Speculation runs rampant; part of what makes the Holders stories so enticing is the possibility any person could go into a special institution, ask to visit a Holder, and be forced to undergo a test of power to earn an Object.
+  
+      Some of the Holders have posted their own stories, adding to the mystery of an already eerie and unnerving series. This site is merely an archive; the Holders themselves have leaped around the fields of realm and lore since time immemorial, and the Objects are restless for their Reunion.
+  
+      The Objects, while powerful and fearsome, lack the ability to freely gather together of their own volition, and so have called forth a need in certain individuals. These people become Seekers, their stories as twisted and damned as the Objects themselves. These Seekers have oft set out for three main reasons: to Seek for Power, to Seek for Reunion, or to Seek for Separation. Their goals are known to mutate and change them into villains and monsters but we can only hope that one with a just heart prevails over these foes.
+  
+      There may very well be a reason that you have come across this site, dear reader. Perhaps the Objects are calling. 
+      
+      <a onclick="loadIFrame('holders/end.html')">Will you answer?</a>
+          
+      <br><br><b>Copyright: <a href="https://web.archive.org/web/20200629152446/http://theholders.org/?Special:Main">theholders.org</a> and all authors of the stories involved</b>
+      </p>
+  </main>
+  
+  <footer>
+    <!-- Footer content -->
+  </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-  
 </body>
 
 </html>
