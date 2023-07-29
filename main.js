@@ -35,4 +35,19 @@
     .catch(error => console.error('Error:', error));
   }
   
+  const sidebar = document.getElementById('sidebar');
+  const eyeDarkEye = document.querySelector('img[src="images/eye-dark-eye.gif"]');
+  const anchorsInSidebar = sidebar.getElementsByTagName('a'); // get all anchor tags in the sidebar
   
+  eyeDarkEye.addEventListener('click', () => {
+    sidebar.classList.toggle('show');
+  });
+  
+  function hideSidebar() {
+    sidebar.classList.remove('show');
+  }
+  
+  // Add event listeners to each anchor tag in the sidebar
+  for (let i = 0; i < anchorsInSidebar.length; i++) {
+    anchorsInSidebar[i].addEventListener('click', hideSidebar);
+  }
