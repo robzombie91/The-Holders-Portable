@@ -1,5 +1,5 @@
 :root {
-  --main-bg-color: #000000;
+  --main-bg-color: #CACACA;
   --main-font-family: 'Times New Roman', Times, serif;
 }
 
@@ -26,22 +26,22 @@ ul .dropdown-menu {
 }
 
 .navbar-brand {
-  background-color: #000000;
+  background-color: #CACACA;
   font-weight: 700;
   font-family: var(--main-font-family);
   flex: 0 0 auto;
   margin-right: auto;
-  color: #FFFFFF;
+  color: #black;
   padding-left: 20px;
 }
 
 .navbar-toggler {
-  background-color: #000000;
+  background-color: #CACACA;
 }
 
 .navbar-nav li a,
 .navbar-nav li a:hover {
-  color: #FFFFFF; 
+  color: #black; 
 }
 
 
@@ -50,7 +50,7 @@ body {
 }
 
 .container-fluid {
-  background-color: #000000;
+  background-color: #CACACA;
   font-size: 3em;
 }
 
@@ -116,37 +116,3 @@ body {
     animation: 3s;
 }
 }
-
- #sidebar {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 200px; /* Adjust the width as per your design */
-      height: 100%;
-      background-color: #f0f0f0; /* Adjust the background color as per your design */
-      z-index: 1000;
-      padding: 20px;
-      box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2);
-      padding-top: 10%;
-    }
-
-    #sidebar ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    #sidebar ul li {
-      margin-bottom: 10px;
-    }
-
-    #sidebar ul li a {
-      color: #333; /* Adjust the link color as per your design */
-      text-decoration: none;
-    }
-
-    /* Show the sidebar when it has the "show" class */
-    #sidebar.show {
-      display: block;
-    }
