@@ -1,53 +1,69 @@
-  if (window.innerWidth < 576) {
-  
-    // Select the elements you want to increase font size on  
-    const elements = document.querySelectorAll('h1, h2, p');
-
-    // Loop through the elements
-    elements.forEach(element => {
-    
-      // Increase font size  
+if (window.innerWidth < 576) {
+  const elements = document.querySelectorAll('h1, h2, p');
+  elements.forEach(element => {
       element.style.fontSize = '1.2rem';
-    
-    });
-  
-  }
-
-  function loadContent(url) {
-    fetch(url)
-    .then(response => response.text())
-    .then(data => {
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(data, "text/html");
-  
-      doc.querySelectorAll("p").forEach(p => {
-        p.classList.add("large-text");
-      });
-  
-      // select the main content element
-      const mainContent = document.querySelector('#main-content');
-      // replace the innerHTML of the main content with the fetched data
-      mainContent.innerHTML = doc.body.innerHTML;
-  
-      // Scroll to the top of the page after loading the content
-      window.scrollTo({top: 0, behavior: 'smooth'});
-    })
-    .catch(error => console.error('Error:', error));
-  }
-  
-  const sidebar = document.getElementById('sidebar');
-  const eyeDarkEye = document.querySelector('img[src="images/eye-dark-eye.gif"]');
-  const anchorsInSidebar = sidebar.getElementsByTagName('a'); // get all anchor tags in the sidebar
-  
-  eyeDarkEye.addEventListener('click', () => {
-    sidebar.classList.toggle('show');
   });
-  
-  function hideSidebar() {
-    sidebar.classList.remove('show');
-  }
-  
-  // Add event listeners to each anchor tag in the sidebar
-  for (let i = 0; i < anchorsInSidebar.length; i++) {
-    anchorsInSidebar[i].addEventListener('click', hideSidebar);
-  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  let dropdownItems = document.querySelectorAll('.dropdown-item');
+  dropdownItems.forEach(item => {
+      item.addEventListener('click', function() {
+          let contentId = this.getAttribute('data-content-id');
+          if (contentId) {
+              loadContent(contentId);
+          }
+      });
+  });
+});
+
+document.addEventListener('click', function (event) {
+    const isDropdownItem = event.target.closest('.dropdown-item');
+    if (isDropdownItem) {
+        const navbarMenu = document.querySelector('.navbar-collapse');
+        if (navbarMenu && navbarMenu.classList.contains('show')) {
+            navbarMenu.classList.remove('show');
+        }
+    }
+});
+
+
+function loadContent(contentId) {
+    fetch('loadContentFromServer.php?id=' + contentId)
+        .then(response => {
+            if (!response.ok) { 
+                throw new Error(response.statusText); 
+            }
+            return response.json(); // Parsing the response as JSON instead of text since we updated the PHP to send JSON
+        })
+        .then(data => {
+            document.getElementById('main-content').innerHTML = data.content;
+
+            // Update the navbar brand title
+            document.querySelector('.navbar-brand').textContent = data.title;
+
+            // Container for the navigation links
+            let navLinks = "<div style='margin-top: 20px;'>";  // adding a margin for spacing
+
+            // Previous link
+            if (contentId > 1) {
+                const prevId = parseInt(contentId) - 1;
+                navLinks += `<a href="javascript:void(0);" onclick="loadContent('${prevId}');">Previous</a>`;
+            }
+
+            // Append the next link
+            const nextId = parseInt(contentId) + 1;
+            navLinks += ` <a href="javascript:void(0);" onclick="loadContent('${nextId}');">Next</a>`;
+            
+            // Close the container div
+            navLinks += "</div>";
+
+            document.getElementById('main-content').innerHTML += navLinks;
+
+            // Scroll to the top of the page
+            window.scrollTo(0, 0);
+        })
+        .catch(error => {
+            document.getElementById('main-content').innerHTML = "The Holder you're looking for wasn't found. Keep on searching if you have the fortitude.";
+        });
+}
