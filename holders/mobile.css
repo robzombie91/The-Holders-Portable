@@ -1,9 +1,0 @@
-.larger-text {
-    font-size: 20px;
-  }
-  
-  @media (min-width: 600px) {
-    .larger-text {
-      font-size: 16px;
-    }
-  }
