@@ -54,17 +54,7 @@ $result = $conn->query($sql);
             ?>
 </ul>
           </li>
-          
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Legion's Objects
-            </a>
-            
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" height="40px">
-              <li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" onclick="loadContent('')">His Holder</a></li>
-            </ul>
-          </li>
-          
+                             
         </ul>
         
       </div>
@@ -75,19 +65,20 @@ $result = $conn->query($sql);
   <main id="main-content">
     <!-- Main content -->
     <p>
-      In any city, in any country, there's a mental institution or halfway house you can try any of these in. There were 2538 of these Objects, but 2000 were lost.
-  
-      The remaining 538 must never come together. Ever.
-  
-      These stories have been gathered from various sources, many of which are questionable at best, but they all follow a similar thread; they tell the tale of a number of Objects, which, when brought together, will bring about horrendous consequences, details of which drive most people mad.
-  
-      The veracity of the stories is always in question; this is how it is intended to be. Nobody really knows if these Objects are real, or if there are indeed a set number of Objects that exist in the world that yearn for a reunion with their kin. Speculation runs rampant; part of what makes the Holders stories so enticing is the possibility any person could go into a special institution, ask to visit a Holder, and be forced to undergo a test of power to earn an Object.
-  
-      Some of the Holders have posted their own stories, adding to the mystery of an already eerie and unnerving series. This site is merely an archive; the Holders themselves have leaped around the fields of realm and lore since time immemorial, and the Objects are restless for their Reunion.
-  
-      The Objects, while powerful and fearsome, lack the ability to freely gather together of their own volition, and so have called forth a need in certain individuals. These people become Seekers, their stories as twisted and damned as the Objects themselves. These Seekers have oft set out for three main reasons: to Seek for Power, to Seek for Reunion, or to Seek for Separation. Their goals are known to mutate and change them into villains and monsters but we can only hope that one with a just heart prevails over these foes.
-  
-      There may very well be a reason that you have come across this site, dear reader. Perhaps the Objects are calling. 
+    In any city, in any country, there's a mental institution or halfway house you can try any of these in. There were 2538 of these Objects, but 2000 were lost. 
+<br><br>
+The remaining 538 must never come together. Ever.
+<br><br>
+These stories have been gathered from various sources, many of which are questionable at best, but they all follow a similar thread; they tell the tale of a number of Objects, which, when brought together, will bring about horrendous consequences, details of which drive most people mad.</a>
+<br>
+<br>The veracity of the stories is always in question; this is how it is intended to be. Nobody really knows if these Objects are real, or if there are indeed a set number of Objects that exist in the world that yearn for a reunion with their kin.</a> Speculation runs rampant; part of what makes the Holders stories so enticing is the possibility any person could go into a special institution, ask to visit a Holder, and be forced to undergo a test of power to earn an Object.
+<br>
+<br>Some of the Holders have posted their own, adding to the mystery of an already eerie and unnerving series. This site is merely an archive; the Holders themselves have leaped around the fields of realm and lore since time immemorial, and the Objects are restless for their Reunion.
+<br>
+<br>The Objects, while powerful and fearsome, lack the ability to freely gather together of their own volition, and so have called forth a need in certain individuals.  These people become Seekers</a>, their stories as twisted and damned as the Objects themselves. These Seekers have oft set out for three main reasons: to Seek for Power, to Seek for Reunion, or to Seek for Separation. Their goals are known to mutate and change them into villains</a> and monsters</a> but we can only hope that one with a just heart</a> prevails over these foes.
+<br>
+<br>There may very well be a reason that you have come across this site, dear reader. Perhaps the Objects are calling.</a>
+<br>
 
       
       
@@ -99,8 +90,9 @@ $result = $conn->query($sql);
  </main>
   
   <footer>
+    <br>
     <!-- Footer content -->
-    <b>Copyright: <a href="https://web.archive.org/web/20200629152446/http://theholders.org/?Special:Main">theholders.org</a> and all authors of the stories involved</b>
+    <b>Original Site: <a href="https://web.archive.org/web/20200629152446/http://theholders.org/?Special:Main">theholders.org</a> and all authors of the stories involved including the original 4chan post</b>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
