@@ -27,6 +27,10 @@ document.addEventListener('click', function (event) {
     }
 });
 
+function loadRandomContent() {
+    loadContent('random');
+}
+
 
 function loadContent(contentId) {
     fetch('loadContentFromServer.php?id=' + contentId)

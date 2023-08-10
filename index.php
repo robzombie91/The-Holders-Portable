@@ -31,7 +31,7 @@ $result = $conn->query($sql);
 <body style="padding-top: 70px;">
   <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" style="padding: 0;">
     <div class="container-fluid p-0">
-      <img src="images/logo.jpg" style="height: 70px;">
+      <img src="images/logo.jpg" onclick="loadContent('random')" style="height: 70px;">
       
       <a class="navbar-brand" id="navbar-title" href="index.php">The Holders Series</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,16 +52,19 @@ $result = $conn->query($sql);
                 echo "<li><a class='dropdown-item' href='javascript:void(0);' onclick='loadContent(\"" . $row["id"] . "\");'>" . $row["title"] . "</a></li>";
               }
             ?>
-</ul>
+            </ul>
+           
+
           </li>
-                             
+
+                            
         </ul>
         
       </div>
+      
     </div>
   </nav>
-
-   
+  
   <main id="main-content">
     <!-- Main content -->
     <p>
@@ -94,6 +97,7 @@ These stories have been gathered from various sources, many of which are questio
     <!-- Footer content -->
     <b>Original Site: <a href="https://web.archive.org/web/20200629152446/http://theholders.org/?Special:Main">theholders.org</a> and all authors of the stories involved including the original 4chan post</b>
   </footer>
+  
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   <script src="main.js"></script>

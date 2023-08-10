@@ -13,12 +13,22 @@ if ($conn->connect_error) {
 }
 
 if (isset($_GET['id']) && !empty($_GET['id'])) {
-    $contentId = $conn->real_escape_string($_GET['id']); // Prevent SQL injection
-    $sql = "SELECT content, title FROM content_data WHERE id = ?"; // Note the addition of "title" here
-    
+    $contentId = $conn->real_escape_string($_GET['id']);
+
+    // If 'random' is passed as the ID, fetch a random article
+    if ($contentId == "random") {
+        $sql = "SELECT content, title FROM content_data ORDER BY RAND() LIMIT 1";
+    } else {
+        $sql = "SELECT content, title FROM content_data WHERE id = ?";
+    }
+
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $contentId);
     
+    // If not fetching a random article, bind the parameter
+    if ($contentId != "random") {
+        $stmt->bind_param("s", $contentId);
+    }
+
     if ($stmt->execute()) {
         $result = $stmt->get_result();
         if ($result->num_rows > 0) {
