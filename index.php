@@ -13,8 +13,11 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, title FROM content_data";
+$sql = "SELECT id, title FROM content_data WHERE id BETWEEN 1 AND 2538";
 $result = $conn->query($sql);
+
+$sql2 = "SELECT id, title FROM content_data WHERE id > 2538";
+$result2 = $conn->query($sql2);
 ?>
 
 
@@ -53,6 +56,19 @@ $result = $conn->query($sql);
               }
               ?>
             </ul>
+
+            <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Legion's Objects
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+        <?php
+        while ($row2 = $result2->fetch_assoc()) {
+            echo "<li><a class='dropdown-item' href='javascript:void(0)' onclick='loadContent(" . $row2['id'] . ")'>" . $row2['title'] . "</a></li>";
+        }
+        ?>
+    </ul>
+</li>
 
 
           </li>
@@ -98,9 +114,10 @@ $result = $conn->query($sql);
     <b>Original Site: <a href="https://web.archive.org/web/20200629152446/http://theholders.org/?Special:Main">theholders.org</a> and all authors of the stories involved including the original 4chan post</b>
   </footer>
 
-
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   <script src="main.js"></script>
+  
 </body>
 
 </html>

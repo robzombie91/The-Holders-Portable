@@ -1,6 +1,8 @@
 :root {
   --main-bg-color: #CACACA;
   --main-font-family: 'Times New Roman', Times, serif;
+  --primary-color: #2C3E50;
+  --secondary-color: #E74C3C;
 }
 
 img {
@@ -26,64 +28,95 @@ ul .dropdown-menu {
 }
 
 .navbar-brand {
-  background-color: #CACACA;
+  background-color: var(--main-bg-color);
   font-weight: 700;
   font-family: var(--main-font-family);
   flex: 0 0 auto;
   margin-right: auto;
-  color: #black;
+  color: black;
   padding-left: 20px;
 }
 
 .navbar-toggler {
-  background-color: #CACACA;
+  background-color: var(--main-bg-color);
 }
 
 .navbar-nav li a,
 .navbar-nav li a:hover {
-  color: #black; 
+  color: black; 
 }
-
 
 body {
   background-color: #c3c8e4;
+  font-family: var(--main-font-family);
 }
 
 .container-fluid {
-  background-color: #CACACA;
+  background-color: var(--main-bg-color);
   font-size: 3em;
   border: 1px solid black;
 }
 
-@media (max-width : 432px) {
-  p {
-    font-size: 1rem;
-    font-family: var(--main-font-family);
+.site-footer {
+  padding: 10px 0;
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+}
+
+.site-footer a {
+  color: var(--secondary-color);
+}
+
+@media (max-width : 576px) {
+  body {
+    padding-top: 20%;
   }
+
+  h1, h2, p {
+    font-size: 1.2rem;
+  }
+
   .nav-link {
     font-size: 1rem;
   }
+  
+  .navbar-nav {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navbar-nav .nav-item {
+    flex-grow: 1;
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar-nav .nav-link.dropdown-toggle {
+    font-size: 1rem;  /* Adjust this value as needed */
+  }
+
   .dropdown-item {
     font-size: 1.1rem;
     text-align: center;
   }
-  body {
-    padding-top: 20%;
-  }
+
   .large-text {
     font-size: 1rem;
     padding-top: 1%;
-  }  
+  }
 }
 
 @media (min-width : 1024px) {
   p {
     font-size: 1vw;
-    font-family: var(--main-font-family);
   }
+
   body {
     padding-top: 4vw;
   }
+
   .nav-link,
   .dropdown-item {
     font-size: 1.1rem;
@@ -111,11 +144,4 @@ body {
     color: red;
   }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .animate-color  {
-    animation: 3s;
-}
-
-
-}
+"""
