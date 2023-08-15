@@ -29,6 +29,8 @@ $result2 = $conn->query($sql2);
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="holders.css">
+  <link rel="icon" href="/images/logo.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="150x150" href="images/apple-touch-icon.jpg">
 </head>
 
 <body style="padding-top: 70px;">
