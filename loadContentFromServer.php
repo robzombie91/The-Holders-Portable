@@ -12,6 +12,34 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+
+// Handling search query
+if (isset($_GET['search']) && !empty($_GET['search'])) {
+    $searchTerm = '%' . strtolower($conn->real_escape_string($_GET['search'])) . '%';
+    $sql = "SELECT id, title FROM content_data WHERE LOWER(title) LIKE ? LIMIT 10";
+    
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $searchTerm);
+    
+    if ($stmt->execute()) {
+        $result = $stmt->get_result();
+        $results = [];
+        while ($row = $result->fetch_assoc()) {
+            $results[] = [
+                "id" => $row['id'],
+                "title" => $row['title']
+            ];
+        }
+        echo json_encode($results);
+    } else {
+        http_response_code(500);
+        echo json_encode([
+            "error" => "Database query failed."
+        ]);
+    }
+    $stmt->close();
+    exit();
+}
 if (isset($_GET['id']) && !empty($_GET['id'])) {
     $contentId = $conn->real_escape_string($_GET['id']);
 
