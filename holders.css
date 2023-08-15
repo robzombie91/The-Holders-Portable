@@ -97,8 +97,12 @@ body {
     font-size: 1rem;  /* Adjust this value as needed */
   }
 
-  .navbar-brand {
+.navbar-brand {
     font-size: 0.38em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
   }
 
   .dropdown-item {
