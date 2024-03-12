@@ -38,7 +38,50 @@ ul .dropdown-menu {
 }
 
 .navbar-toggler {
-  background-color: var(--main-bg-color);
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.navbar-toggler-icon {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #000;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.navbar-toggler-icon:before,
+.navbar-toggler-icon:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  transition: transform 0.3s;
+}
+
+.navbar-toggler-icon:before {
+  transform: translateY(-6px);
+}
+
+.navbar-toggler-icon:after {
+  transform: translateY(6px);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  background-color: transparent;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+  transform: translateY(0) rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+  transform: translateY(0) rotate(-45deg);
 }
 
 .navbar-nav li a,
@@ -68,19 +111,20 @@ body {
   color: var(--secondary-color);
 }
 
-@media (max-width : 576px) {
+@media (max-width: 576px) {
   body {
-    padding-top: 20%;
+    padding-top: 70px;
   }
 
   h1, h2, p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .nav-link {
     font-size: 1rem;
+    padding: 10px 0;
   }
-  
+
   .navbar-nav {
     justify-content: center;
     align-items: center;
@@ -94,10 +138,10 @@ body {
   }
 
   .navbar-nav .nav-link.dropdown-toggle {
-    font-size: 1rem;  /* Adjust this value as needed */
+    font-size: 1rem;
   }
 
-.navbar-brand {
+  .navbar-brand {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -105,7 +149,8 @@ body {
   }
 
   .dropdown-item {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
+    padding: 8px 0;
     text-align: center;
   }
 
@@ -113,9 +158,25 @@ body {
     font-size: 1rem;
     padding-top: 1%;
   }
+
+  .navbar-collapse {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    overflow-y: auto;
+    transition: left 0.3s;
+    background-color: var(--main-bg-color);
+    padding: 20px;
+  }
+
+  .navbar-collapse.show {
+    left: 0;
+  }
 }
 
-@media (min-width : 1024px) {
+@media (min-width: 1024px) {
   p {
     font-size: 1vw;
   }
@@ -153,66 +214,69 @@ body {
 }
 
 .autocomplete-results {
-    position: absolute;
-    width: 100%;
-    max-height: 200px;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    border-top: none;
-    background-color: #fff;
-    z-index: 1000;  /* To ensure the dropdown appears on top of other elements */
+  position: absolute;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-top: none;
+  background-color: #fff;
+  z-index: 1000;
 }
 
 .autocomplete-item {
-    padding: 8px 12px;
-    cursor: pointer;
-    transition: background-color 0.2s;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 .autocomplete-item:hover {
-    background-color: #f5f5f5;
+  background-color: #f5f5f5;
 }
 
-/* Search Box Styles */
 #search-box {
-    flex-grow: 1;
-    margin-right: 50px;
+  flex-grow: 1;
+  margin-right: 50px;
 }
 
-/* Typeahead Dropdown Styles */
 .typeahead-dropdown {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    display: none;
-    float: left;
-    min-width: 10rem;
-    padding: 0.5rem 0;
-    margin: 0.125rem 0 0;
-    font-size: 1rem;
-    color: #212529;
-    text-align: left;
-    list-style: none;
-    background-color: var(--main-bg-color);
-    border: 1px solid rgba(0,0,0,.15);
-    border-radius: 0.25rem;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: var(--main-bg-color);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
 }
 
 .typeahead-dropdown > a {
-    display: block;
-    width: 100%;
-    padding: 0.25rem 1.5rem;
-    clear: both;
-    font-weight: 400;
-    color: #212529;
-    text-align: inherit;
-    white-space: nowrap;
-    background-color: transparent;
-    border: 0;
+  display: block;
+  width: 100%;
+  padding: 0.25rem 1.5rem;
+  clear: both;
+  font-weight: 400;
+  color: #212529;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
 }
 
 .typeahead-dropdown > a:hover {
-    background-color: var(--secondary-color);
-    color: white;
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.typeahead-dropdown > a.selected {
+  background-color: var(--secondary-color);
+  color: white;
 }

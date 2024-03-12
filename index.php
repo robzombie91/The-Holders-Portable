@@ -31,6 +31,7 @@ $result2 = $conn->query($sql2);
 <link href="holders.css" rel="stylesheet" type="text/css"/>
 <link href="/images/logo.ico" rel="icon" type="image/x-icon"/>
 <link href="images/apple-touch-icon.jpg" rel="apple-touch-icon" sizes="150x150"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body style="padding-top: 70px;">
 <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" style="padding: 0;">
@@ -66,7 +67,14 @@ $result2 = $conn->query($sql2);
     </ul>
 </li>
 </li>
-<form class="d-flex"><input aria-label="Search" class="form-control me-2" id="search-box" placeholder="Find an Object" type="search"/></form>
+<form class="d-flex">
+  <div class="input-group">
+    <input aria-label="Search" class="form-control me-2" id="search-box" placeholder="Find an Object" type="search"/>
+    <div class="input-group-append">
+      <span class="input-group-text"><i class="fas fa-search"></i></span>
+    </div>
+  </div>
+</form>
 </ul>
 </div>
 </div>
@@ -101,4 +109,4 @@ $result2 = $conn->query($sql2);
 
 </footer>
 </body>
-</html>
+</html> 
