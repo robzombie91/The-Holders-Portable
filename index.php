@@ -26,6 +26,7 @@ $result2 = $conn->query($sql2);
 <html [data-theme="dark" ]="">
 <head>
 <title>The Holders Series</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet">
 <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" rel="stylesheet"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="holders.css" rel="stylesheet" type="text/css"/>
@@ -75,6 +76,9 @@ $result2 = $conn->query($sql2);
     </div>
   </div>
 </form>
+</li>
+</form>
+</div>
 </ul>
 </div>
 </div>
@@ -86,15 +90,15 @@ $result2 = $conn->query($sql2);
       <br/><br/>
       The remaining 538 must never come together. Ever.
       <br/><br/>
-      These stories have been gathered from various sources, many of which are questionable at best, but they all follow a similar thread; they tell the tale of a number of Objects, which, when brought together, will bring about horrendous consequences, details of which <a onclick="loadContent('1')" style="color:blue"> drive most people mad.</a>
+      These stories have been gathered from various sources, many of which are questionable at best, but they all follow a similar thread; they tell the tale of a number of Objects, which, when brought together, will bring about horrendous consequences, details of which <a onclick="loadContent('1')" style="color:green"> drive most people mad.</a>
 <br/>
-<br/>The veracity of the stories is always in question; this is how it is intended to be. Nobody really knows if these Objects are real, or if there are indeed a set number of Objects that exist in the world that <a onclick="loadContent('490')" style="color:blue">yearn for a reunion with their kin.</a> Speculation runs rampant; part of what makes the Holders stories so enticing is the possibility any person could go into a special institution, ask to visit a Holder, and be forced to undergo a test of power to earn an Object.
+<br/>The veracity of the stories is always in question; this is how it is intended to be. Nobody really knows if these Objects are real, or if there are indeed a set number of Objects that exist in the world that <a onclick="loadContent('490')" style="color:green">yearn for a reunion with their kin.</a> Speculation runs rampant; part of what makes the Holders stories so enticing is the possibility any person could go into a special institution, ask to visit a Holder, and be forced to undergo a test of power to earn an Object.
       <br/>
-<br/>Some of the Holders have posted <a onclick="loadContent('173')" style="color:blue">their own</a><a onclick="loadContent('376')" style="color:blue"> stories</a> adding to the mystery of an already eerie and unnerving series. This site is merely an archive; the Holders themselves have leaped around the fields of realm and lore since time immemorial, and the Objects are restless for their Reunion.
+<br/>Some of the Holders have posted <a onclick="loadContent('173')" style="color:green">their own</a><a onclick="loadContent('376')" style="color:green"> stories</a> adding to the mystery of an already eerie and unnerving series. This site is merely an archive; the Holders themselves have leaped around the fields of realm and lore since time immemorial, and the Objects are restless for their Reunion.
       <br/>
-<br/>The Objects, while powerful and fearsome, lack the ability to freely gather together of their own volition, and so have called forth a need in certain individuals. These people become Seekers</p>, their stories as twisted and damned as the Objects themselves. These Seekers have oft set out for three main reasons: to Seek for Power, to Seek for Reunion, or to Seek for Separation. Their goals are known to mutate and change them into villains and monsters but we can only hope that one with a just heart prevails over these foes.
+<br/>The Objects, while powerful and fearsome, lack the ability to freely gather together of their own volition, and so have called forth a need in certain individuals. These people become Seekers, their stories as twisted and damned as the Objects themselves. These Seekers have oft set out for three main reasons: to Seek for Power, to Seek for Reunion, or to Seek for Separation. Their goals are known to mutate and change them into villains and monsters but we can only hope that one with a just heart prevails over these foes.
       <br/>
-<br/>There may very well be a reason that you have come across this site, dear reader. Perhaps the Objects are <a onclick="loadContent('1')" style="color:blue">calling.</a>
+<br/>There may very well be a reason that you have come across this site, dear reader. Perhaps the Objects are <a onclick="loadContent('1')" style="color:green">calling.</a>
 <br/>
 <br/><a class="animate-color" onclick="loadContent('1')" style="animation: animate-color 3s infinite; text-decoration: none;">Will you answer?</a>
 

@@ -174,4 +174,32 @@ document.addEventListener('click', function(event) {
 
     }
 });
+
+function showSubmissionForm() {
+  document.getElementById('submissionForm').style.display = 'block';
+}
+
+document.getElementById('articleSubmissionForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  let formData = new FormData(this);
+
+  fetch('submit_article.php', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      alert('Thank you for your submission. It will be reviewed shortly.');
+      document.getElementById('submissionForm').style.display = 'none';
+    } else {
+      alert('There was an error submitting your article. Please try again.');
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('There was an error submitting your article. Please try again.');
+  });
+});
  
