@@ -77,8 +77,8 @@ img {
   transition: background-color 0.3s;
 }
 
-.navbar-toggler-icon:before,
-.navbar-toggler-icon:after {
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -87,11 +87,11 @@ img {
   transition: transform 0.3s;
 }
 
-.navbar-toggler-icon:before {
+.navbar-toggler-icon::before {
   transform: translateY(-6px);
 }
 
-.navbar-toggler-icon:after {
+.navbar-toggler-icon::after {
   transform: translateY(6px);
 }
 
@@ -99,11 +99,11 @@ img {
   background-color: transparent;
 }
 
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
   transform: translateY(0) rotate(45deg);
 }
 
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
   transform: translateY(0) rotate(-45deg);
 }
 
@@ -149,7 +149,7 @@ img {
   overflow-y: auto;
   background-color: var(--secondary-color);
   border: none;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown-item {
@@ -228,11 +228,7 @@ color: #888;
   border: 0;
 }
 
-.typeahead-dropdown > a:hover {
-  background-color: var(--accent-color);
-  color: var(--text-color);
-}
-
+.typeahead-dropdown > a:hover,
 .typeahead-dropdown > a.selected {
   background-color: var(--accent-color);
   color: var(--text-color);
@@ -250,14 +246,11 @@ color: #888;
 }
 
 @keyframes animate-color {
-  0% {
+  0%, 100% {
     color: red;
   }
   50% {
     color: blue;
-  }
-  100% {
-    color: red;
   }
 }
 
@@ -281,7 +274,7 @@ background-color: rgba(74, 74, 74, 0.1);
 border-radius: 8px;
 padding: 20px;
 margin-top: 20px;
-box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 a {
@@ -337,13 +330,10 @@ a:hover {
     width: 100%;
   }
 
-  .nav-link {
-    font-size: 1rem;
-    padding: 10px 0;
-  }
-
+  .nav-link,
   .navbar-nav .nav-link.dropdown-toggle {
     font-size: 1rem;
+    padding: 10px 0;
   }
 
   .navbar-brand {

@@ -1,94 +1,41 @@
 <?php
 header('Content-Type: application/json');
 
-$servername = "localhost";
-$username = "readdata";
-$password = "krtsTL&AKr4cST";
-$dbname = "theholders";
+$conn = new mysqli("localhost", "readdata", "krtsTL&AKr4cST", "theholders");
+if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-
-// Handling search query
 if (isset($_GET['search']) && !empty($_GET['search'])) {
     $searchTerm = '%' . strtolower($conn->real_escape_string($_GET['search'])) . '%';
-    $sql = "SELECT id, title FROM content_data WHERE LOWER(title) LIKE ? LIMIT 10";
-    
-    $stmt = $conn->prepare($sql);
+    $stmt = $conn->prepare("SELECT id, title FROM content_data WHERE LOWER(title) LIKE ? LIMIT 10");
     $stmt->bind_param("s", $searchTerm);
-    
-    if ($stmt->execute()) {
-        $result = $stmt->get_result();
-        $results = [];
-        while ($row = $result->fetch_assoc()) {
-            $results[] = [
-                "id" => $row['id'],
-                "title" => $row['title']
-            ];
-        }
-        echo json_encode($results);
-    } else {
-        http_response_code(500);
-        echo json_encode([
-            "error" => "Database query failed."
-        ]);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $results = [];
+    while ($row = $result->fetch_assoc()) {
+        $results[] = ["id" => $row['id'], "title" => $row['title']];
     }
+    echo json_encode($results);
     $stmt->close();
     exit();
 }
+
 if (isset($_GET['id']) && !empty($_GET['id'])) {
     $contentId = $conn->real_escape_string($_GET['id']);
-
-    // If 'random' is passed as the ID, fetch a random article
-    if ($contentId == "random") {
-        $sql = "SELECT content, title FROM content_data ORDER BY RAND() LIMIT 1";
-    } else {
-        $sql = "SELECT content, title FROM content_data WHERE id = ?";
-    }
-
+    $sql = ($contentId == "random") ? "SELECT content, title FROM content_data ORDER BY RAND() LIMIT 1" : "SELECT content, title FROM content_data WHERE id = ?";
     $stmt = $conn->prepare($sql);
-    
-    // If not fetching a random article, bind the parameter
-    if ($contentId != "random") {
-        $stmt->bind_param("s", $contentId);
-    }
-
-    if ($stmt->execute()) {
-        $result = $stmt->get_result();
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-
-            // Return content and title in a JSON format
-            $response = [
-                "content" => $row['content'],
-                "title" => $row['title']
-            ];
-            echo json_encode($response);
-        } else {
-            http_response_code(404);
-            echo json_encode([
-                "content" => "Content not found for ID: " . $contentId,
-                "title" => "Not Found"
-            ]);
-        }
+    if ($contentId != "random") $stmt->bind_param("s", $contentId);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        echo json_encode(["content" => $row['content'], "title" => $row['title']]);
     } else {
-        http_response_code(500);
-        echo json_encode([
-            "content" => "Database query failed.",
-            "title" => "Error"
-        ]);
+        http_response_code(404);
+        echo json_encode(["content" => "Content not found for ID: " . $contentId, "title" => "Not Found"]);
     }
-
     $stmt->close();
 } else {
     http_response_code(400);
-    echo json_encode([
-        "content" => "ID parameter not provided or is empty.",
-        "title" => "Bad Request"
-    ]);
+    echo json_encode(["content" => "ID parameter not provided or is empty.", "title" => "Bad Request"]);
 }
 ?>
